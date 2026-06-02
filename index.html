@@ -3,86 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MalufLoja - Finalizar Compra</title>
-    <link rel="stylesheet" href="checkout.css">
+    <title>TechLoja - Eletrônicos e Tecnologia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="scr/favicon.png" type="image/x-icon">
 </head>
 <body>
 
     <header>
         <div class="logo">MalufLoja</div>
-        <a href="index.html" class="btn-voltar">← Voltar para a loja</a>
+        <input type="text" placeholder="Buscar produtos...">
+        <button>Buscar</button>
     </header>
 
-    <main class="container-checkout">
-        
-        <section class="resumo-pedido">
-            <h2>Resumo do Pedido</h2>
-            <div class="produto-selecionado">
-                <img id="img-produto" src="" alt="Produto">
-                <div>
-                    <h3 id="nome-produto">Carregando produto...</h3>
-                    <p id="preco-produto">R$ 0,00</p>
-                </div>
-            </div>
-            <div class="total-linha">
-                <span>Frete:</span>
-                <span class="gratis">Grátis</span>
-            </div>
-            <div class="total-linha total-final">
-                <span>Total:</span>
-                <span id="total-produto">R$ 0,00</span>
+    <section class="banner">
+        <h1>Bem-vindo à MalufLoja</h1>
+        <p>Os melhores produtos de tecnologia com os melhores preços</p>
+    </section>
+
+    <main>
+
+        <section>
+            <div class="titulo-categoria">
+                <h2>Produtos em Destaque</h2>
+                <a href="#">Ver mais →</a>
             </div>
         </section>
 
-        <section class="formulario-pagamento">
-            <h2>Dados de Pagamento</h2>
+        <section class="produtos">
             
-            <div class="metodos-pagamento">
-                <button type="button" class="btn-metodo ativo" onclick="mudarMetodo('pix')">Pix</button>
-                <button type="button" class="btn-metodo" onclick="mudarMetodo('cartao')">Cartão de Crédito</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=2070" alt="MacBook Pro">
+                <h3>MacBook Pro 16"</h3>
+                <p>R$ 12.999,00</p>
+                <a href="https://www.kabum.com.br/produto/658779/macbook-pro-apple-16-m4-pro-cpu-14-nucleos-gpu-20-nucleos-neural-engine-de-16-nucleos-48gb-ram-ssd-512gb-preto-espacial-mx2y3bz-a" target="_blank">Comprar</a>
             </div>
 
-            <div id="checkout-pix" class="conteudo-pagamento">
-                <p>Escaneie o código abaixo para pagar:</p>
-                <div class="qr-code-placeholder">
-                    <img src="https://gstatic.com" alt="QR Code Fictício">
-                </div>
-                <input type="text" class="input-pix" value="00020101021226870014br.gov.bcb.pix2565malufloja" readonly>
-                <button type="button" class="btn-sucesso" onclick="finalizarCompra()">Copiar Código Pix</button>
+            <div class="card">
+                <img src="https://images.samsung.com/br/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-titanium-gray-back-mo.jpg?imbypass=true" alt="Samsung Galaxy">
+                <h3>Samsung Galaxy S24</h3>
+                <p>R$ 5.499,00</p>
+                <a href="https://kabum.com.br" target="_blank">Comprar</a>
             </div>
 
-            <form id="checkout-cartao" class="conteudo-pagamento escondido" onsubmit="event.preventDefault(); finalizarCompra();">
-                <div class="grupo-input">
-                    <label>Número do Cartão</label>
-                    <input type="text" placeholder="0000 0000 0000 0000" required>
-                </div>
-                <div class="grupo-input">
-                    <label>Nome no Cartão</label>
-                    <input type="text" placeholder="Como está no cartão" required>
-                </div>
-                <div class="linha-inputs">
-                    <div class="grupo-input">
-                        <label>Validade</label>
-                        <input type="text" placeholder="MM/AA" required>
-                    </div>
-                    <div class="grupo-input">
-                        <label>CVV</label>
-                        <input type="text" placeholder="000" required>
-                    </div>
-                </div>
-                <div class="grupo-input">
-                    <label>Parcelas</label>
-                    <select id="parcelas-select">
-                        <option>1x sem juros</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-sucesso">Pagar com Cartão</button>
-            </form>
+            <div class="card">
+                <img src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/939944/xlarge/Console-Playstation-5-Slim-Digital-Edition-825GB-USB-HDMI-Branco_1772549611.png" alt="PlayStation 5">
+                <h3>PlayStation 5 Slim</h3>
+                <p>R$ 4.299,00</p>
+                <a href="https://kabum.com.br" target="_blank">Comprar</a>
+            </div>
+
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/416ZUxb5TiL.jpg" alt="Fone Bluetooth">
+                <h3>Fone de Ouvido AirPods</h3>
+                <p>R$ 1.299,00</p>
+                <a href="https://kabum.com.br" target="_blank">Comprar</a>
+            </div>
+
+            <div class="card"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqBD-jm1ymIROh24T61p8TB2ax7dctWI_CPA&s" alt="iPhone 15"> 
+                <h3>iPhone 15 Pro</h3> 
+                <p>R$ 7.999,00</p> 
+                <a href="https://kabum.com.br" target="_blank">Comprar</a> 
+            </div> 
+
+            <div class="card"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMamjdRq3sEVV5BumQ_YXlmjIBgiumWqfxRg&s" alt="Kindle Oasis"> 
+                <h3>Kindle Oasis E-reader</h3> 
+                <p>R$ 1.499,00</p> 
+                <a href="https://kabum.com.br" target="_blank">Comprar</a> 
+            </div> 
+
+            <div class="card"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmDA96jehM8hHoax2oxNRQu8vhilGkUL_IxA&s" alt="Smart TV LG"> 
+                <h3>Smart TV 4K 55"</h3> 
+                <p>R$ 2.899,00</p> 
+                <a href="https://kabum.com.br" target="_blank">Comprar</a> 
+            </div> 
+
+            <div class="card"> 
+                <img src="https://cdn.awsli.com.br/2500x2500/2202/2202388/produto/256381259/garmin-forerunner-165-preto-5-61d1lwuk55.png" alt="Smartwatch Garmin"> 
+                <h3>Relógio Garmin Forerunner</h3> 
+                <p>R$ 2.199,00</p> 
+                <a href="https://kabum.com.br" target="_blank">Comprar</a> 
+            </div> 
+
+            <div class="card"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQKxY7WU1zpfQZ7F-2cyMKNRxLeiqC4ixwxg&s" alt="Notebook Gamer"> 
+                <h3>Notebook Gamer ASUS</h3> 
+                <p>R$ 6.499,00</p> 
+                <a href="https://kabum.com.br" target="_blank">Comprar</a> 
+            </div> 
+
+            <div class="card"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY0IqDXTx8mxBlkl9fVXdbGnCKo7lSVdk2pA&s" alt="Caixa de som Bluetooth"> 
+                <h3>Caixa de Som JBL Boombox</h3> 
+                <p>R$ 2.399,00</p> 
+                <a href="https://kabum.com.br" target="_blank">Comprar</a> 
+            </div>
 
         </section>
-
     </main>
 
-    <script src="checkout.js"></script>
+    <footer>
+        <div>
+            <h3>Fale conosco</h3>
+            <form>
+                <input type="text" placeholder="Seu nome">
+                <input type="email" placeholder="Seu e-mail">
+                <textarea placeholder="Sua mensagem..." rows="4"></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+
+        <div>
+            <h3>Links Rápidos</h3>
+            <p>Sobre nós</p>
+            <p>Produtos</p>
+            <p>Promoções</p>
+            <p>Contato</p>
+        </div>
+
+        <div>
+            <h3>Atendimento</h3>
+            <p>(41) 99999-9999</p>
+            <p>Curitiba, PR</p>
+            <p>suporte@techloja.com</p>
+        </div>
+    </footer>
+
 </body>
 </html>
