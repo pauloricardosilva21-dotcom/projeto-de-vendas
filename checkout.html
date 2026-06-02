@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MalufLoja - Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">MalufLoja</div>
+        <a href="carrinho.html" class="btn-voltar">← Voltar ao Carrinho</a>
+    </header>
+
+    <main class="checkout-container">
+        <h1>Finalizar Pedido</h1>
+        
+        <div class="checkout-content">
+            <div class="resumo-pedido">
+                <h2>Resumo do Pedido</h2>
+                <div id="checkout-itens"></div>
+                <div class="valores">
+                    <p>Subtotal: <span id="checkout-subtotal">R$ 0,00</span></p>
+                    <p>Frete: <span>R$ 29,90</span></p>
+                    <p class="total">Total: <span id="checkout-total">R$ 0,00</span></p>
+                </div>
+            </div>
+
+            <div class="formulario-pagamento">
+                <h2>Dados de Pagamento</h2>
+                <form>
+                    <label>Nome completo</label>
+                    <input type="text" value="Paulo Silva" required>
+                    
+                    <label>CPF</label>
+                    <input type="text" value="123.456.789-00" required>
+                    
+                    <label>Endereço</label>
+                    <input type="text" value="Rua das Flores, 123 - Curitiba, PR" required>
+
+                    <label>Forma de Pagamento</label>
+                    <div class="payment-methods">
+                        <label class="method"><input type="radio" name="pagamento" checked> 💳 Cartão de Crédito</label>
+                        <label class="method"><input type="radio" name="pagamento"> 📱 PIX</label>
+                        <label class="method"><input type="radio" name="pagamento"> 📄 Boleto</label>
+                    </div>
+
+                    <button type="button" onclick="finalizarCompra()" class="btn-finalizar">Pagar Agora</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MalufLoja - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

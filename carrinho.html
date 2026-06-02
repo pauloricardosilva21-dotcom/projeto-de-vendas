@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MalufLoja - Carrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">MalufLoja</div>
+        <a href="index.html" class="btn-voltar">← Continuar Comprando</a>
+    </header>
+
+    <main class="carrinho-container">
+        <h1>Seu Carrinho</h1>
+        <div id="carrinho-itens" class="carrinho-itens"></div>
+
+        <div class="carrinho-resumo">
+            <h2>Resumo</h2>
+            <p>Subtotal: <span id="subtotal">R$ 0,00</span></p>
+            <p>Frete: <span>R$ 29,90</span></p>
+            <p class="total">Total: <span id="total">R$ 0,00</span></p>
+            <button onclick="irParaCheckout()" class="btn-finalizar">Finalizar Compra</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MalufLoja - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
