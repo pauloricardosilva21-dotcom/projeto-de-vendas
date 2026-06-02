@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MalufLoja</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .produto-resumo {
+            flex: 1;
+            text-align: center;
+            border-right: 1px solid #eee;
+            padding-right: 30px;
+        }
+        .produto-resumo img {
+            max-width: 200px;
+            height: auto;
+            object-fit: contain;
+        }
+        .checkout-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .checkout-form input, .checkout-form button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .checkout-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .checkout-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='index.html'">MalufLoja</div>
+    </header>
+
+    <main>
+        <div class="checkout-container">
+            <div class="produto-resumo">
+                <h2>Resumo do Pedido</h2>
+                <img id="checkout-img" src="" alt="Imagem do Produto">
+                <h3 id="checkout-nome">Carregando produto...</h3>
+                <p id="checkout-preco" style="font-size: 20px; color: #28a745; font-weight: bold;"></p>
+            </div>
+
+            <form class="checkout-form" onsubmit="finalizarCompra(event)">
+                <h2>Dados de Envio e Pagamento</h2>
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="text" placeholder="CPF" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="text" placeholder="Endereço de Entrega" required>
+                <input type="text" placeholder="Número do Cartão" required>
+                <button type="submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nome = params.get('nome');
+        const preco = params.get('preco');
+        const img = params.get('img');
+
+        if (nome && preco && img) {
+            document.getElementById('checkout-nome').textContent = nome;
+            document.getElementById('checkout-img').src = img;
+            document.getElementById('checkout-img').alt = nome;
+            
+            const precoFormatado = parseFloat(preco).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            document.getElementById('checkout-preco').textContent = precoFormatado;
+        } else {
+            window.location.href = 'index.html';
+        }
+
+        function finalizarCompra(event) {
+            event.preventDefault();
+            alert('Compra realizada com sucesso para o produto: ' + nome);
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
